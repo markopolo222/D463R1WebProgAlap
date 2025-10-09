@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<style>
+    p{
+        background-color: rgb(30, 105, 112);
+        padding: 9px;
+    }
+
+    span{
+        background-color: aqua;
+        color: red;
+        padding: 10px;
+    }
+
+    p.nm1{
+        display: none;
+    }
+    p.nm2{
+        display: inline;
+    }
+    p.nm3{
+        display: block;
+    }
+    p.nm4{
+        display: inline-block;
+    }
+    p.nm5{
+        display: flex;
+    }
+</style>
+<body>
+    <h1>Megjelenítés tulajdonság</h1>
+
+    <h2>Display:none:</h2>
+    <span>
+        <p class="nm1">PTI BSC 1</p>
+        <p class="nm1">PTI BSC 2</p>
+        <p class="nm1">PTI BSC 3</p>
+    </span>
+
+    <h2>Display:inline:</h2>
+
+    <span>
+        <p class="nm2">PTI BSC 1</p>
+        <p class="nm2">PTI BSC 2</p>
+        <p class="nm2">PTI BSC 3</p>
+    </span>
+
+    <h2>display:block:</h2>
+
+    <span>
+        <p class="nm3">PTI BSC 1</p>
+        <p class="nm3">PTI BSC 2</p>
+        <p class="nm3">PTI BSC 3</p>
+    </span>
+
+    <h2>display:inline-block:</h2>
+
+    <span>
+        <p class="nm4">PTI BSC 1</p>
+        <p class="nm4">PTI BSC 2</p>
+        <p class="nm4">PTI BSC 3</p>
+    </span>
+
+
+    <h2>display:flex:</h2>
+    <span>
+        <p class="nm5">PTI BSC 1</p>
+        <p class="nm5">PTI BSC 2</p>
+        <p class="nm5">PTI BSC 3</p>
+    </span>
+
+
+</body>
+</html>
