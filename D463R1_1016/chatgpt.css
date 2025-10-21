@@ -1,0 +1,66 @@
+body {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+h1 {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 70%;
+    border: 3px solid gray;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+caption {
+    background-color: #f6f6f6;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #999;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+th {
+    background-color: #ccc;
+    font-style: italic;
+}
+
+tr.piros td {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+tr.sarga td {
+    background-color: #ffffcc;
+}
+
+/* 🔹 2. sor 2. cellájában lévő doboz (vízszintes + függőleges görgetéssel) */
+.celladoboz {
+    background-color: #ffffe0;
+    border: 1px solid #555;
+    padding: 5px;
+    width: 95%;
+    height: 90px;
+    text-align: left;
+    overflow: scroll; /* 🔹 mindkét irányban görgethető */
+    margin: 0 auto;
+    box-sizing: border-box;
+    white-space: nowrap; /* 🔹 a sorok nem törnek le, így vízszintes scroll is lesz */
+}
