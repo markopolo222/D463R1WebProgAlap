@@ -31,15 +31,75 @@
     <video src="D463R1_video.mp4" autoplay="false" controls width="600"></video>
 
     <div class="grid">
-        <div>indítás</div>
-        <div>leállítás</div>
-        <div>indítás / leállítás</div>
+        <div>
+        <button id="start">Indítás</button>
+        <button id="stop">Leállítás</button>
 
     </div>
+
+    <div>
+        <button id="startstop">Indítás/Leállítás</button>
+    </div>
+    <div>
+        <button id="mute">Néma</button>
+        <button id="quite">halk</button>
+        <button id="loud">hangos</button>
+    </div>
+
+    <div>
+        <button id="veryslow">Nagyon lassú</button>
+        <button id="slow">lassú</button>
+        <button id="normal">normál</button>
+        <button id="fast">gyors</button>
+        <button id="veryfast">nagyon gyors</button>
+    </div>
+
+    <div>
+        <button id="small">kicsi</button>
+        <button id="normalsize">normál</button>
+        <button id="big">nagy</button>
+    </div>
+    <div>
+        <button id="hasitended">befejeződött-e</button>
+        <button id="lenght">video hossza (mp)</button>
+        <button id="currently">Jelenlegi pozicíó</button>
+    </div>
+</div>
 </section>
 
     
+<footer><a href="https://www.w3schools.com/html/html5_video.asp">https://www.w3schools.com/html/html5_video.asp</a></footer>
 
 
+<script>
+    let btnClick = (id, onclick) => document.getElementById.addEventListener("click", onclick);
+
+    const video = document.querySelector("video");
+
+    btnClick("start",   () => video.play());
+    btnClick("stop",   () => video.pause());
+    btnClick("startstop",   () => video.pause ? video.play() : video.pause());
+    btnClick("mute",   () => video.volume = 0);
+    btnClick("quite",   () => video.volume = 0.5);
+    btnClick("loud",   () => video.volume = 1);
+
+
+    btnClick("veryslow",   () => video.playbackRate = 0.5);
+    btnClick("slow",   () => video.playbackRate = 0.75);
+    btnClick("normal",   () => video.playbackRate = 1);
+    btnClick("fast",   () => video.playbackRate = 1.25);
+    btnClick("veryfast",   () => video.playbackRate = 1.5);
+
+    btnClick("small",   () => video.width = 400);
+    btnClick("normalsize",   () => video.width = 600);
+    btnClick("big",   () => video.playbackRate = 800);
+
+    btnClick("hasitended",   () => alert(video.ended));
+    btnClick("lenght",   () => alert(video.duration));
+    btnClick("currently",   () => alert(video.currentTime));
+    
+
+    
+</script>
 </body>
 </html>
