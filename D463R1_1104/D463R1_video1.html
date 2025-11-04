@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .grid{
+        margin-top: 2rem;
+        display:grid;
+        grid-template-columns: 1fr 2.5fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1rem;
+        width: 40rem;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+
+    footer{
+        border-top: 4px solid gray;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        width: 37.5rem;
+        text-align: right;
+    }
+
+    div.grid>div{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    button{
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 4;
+        overflow: hidden;
+
+        border: none;
+        border-radius: 0.5rem;
+        background-color: #bdf;
+        box-shadow: 0 0 0 0.25rem black, inset 0 0 0.25rem 0 white;
+    }
+
+    button:hover{
+        background-color: #9cf;
+    }
+
+
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Materials+Symbols+Outlined">
+<body>
+    
+<header><h1>Videó lejátszás_D463R1</h1></header>
+
+<section>
+    <video src="video/D463R1_video.mp4" autoplay="false" controls width="600"></video>
+
+    <div class="grid">
+        <div>
+        <button id="start">Indítás</button>
+        <button id="stop">Leállítás</button>
+
+    </div>
+
+    <div>
+        <button id="startstop">Indítás/Leállítás</button>
+    </div>
+    <div>
+        <button id="mute">Néma</button>
+        <button id="quite">halk</button>
+        <button id="loud">hangos</button>
+    </div>
+
+    <div>
+        <button id="veryslow">Nagyon lassú</button>
+        <button id="slow">lassú</button>
+        <button id="normal">normál</button>
+        <button id="fast">gyors</button>
+        <button id="veryfast">nagyon gyors</button>
+    </div>
+
+    <div>
+        <button id="small">kicsi</button>
+        <button id="normalsize">normál</button>
+        <button id="big">nagy</button>
+    </div>
+    <div>
+        <button id="hasitended">befejeződött-e</button>
+        <button id="lenght">video hossza (mp)</button>
+        <button id="currently">Jelenlegi pozicíó</button>
+    </div>
+</div>
+</section>
+
+    
+<footer><a href="https://www.w3schools.com/html/html5_video.asp">https://www.w3schools.com/html/html5_video.asp</a></footer>
+
+
+<script>
+    let btnClick = (id, onclick) => document.getElementById.addEventListener("click", onclick);
+
+    const video = document.querySelector("video");
+
+    btnClick("start",   () => video.play());
+    btnClick("stop",   () => video.pause());
+    btnClick("startstop",   () => video.pause ? video.play() : video.pause());
+    btnClick("mute",   () => video.volume = 0);
+    btnClick("quite",   () => video.volume = 0.5);
+    btnClick("loud",   () => video.volume = 1);
+
+
+    btnClick("veryslow",   () => video.playbackRate = 0.5);
+    btnClick("slow",   () => video.playbackRate = 0.75);
+    btnClick("normal",   () => video.playbackRate = 1);
+    btnClick("fast",   () => video.playbackRate = 1.25);
+    btnClick("veryfast",   () => video.playbackRate = 1.5);
+
+    btnClick("small",   () => video.width = 400);
+    btnClick("normalsize",   () => video.width = 600);
+    btnClick("big",   () => video.playbackRate = 800);
+
+    btnClick("hasitended",   () => alert(video.ended));
+    btnClick("lenght",   () => alert(video.duration));
+    btnClick("currently",   () => alert(video.currentTime));
+    
+
+    
+</script>
+
+
+</body>
+</html>
