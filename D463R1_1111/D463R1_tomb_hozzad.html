@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tömb hozzáadás</title>
+</head>
+<body>
+    <h1>Tömb hozzáadás</h1>
+    
+   <strong> Előtte: </strong> <p id="D463R1"> </p>
+   <strong> Utána: </strong> <p id="D463R1_1"> </p>
+   
+   <strong> Tömb hozzáad: </strong> <p id="D463R1_2"> </p>
+
+   <button onclick="hozzaad()">Új érték hozzáadás</button>
+   <button onclick="hossz()">Tömb hossza</button>
+
+
+   <script>
+    let programnyelv = ["HTML5", "CSS3", "JS"];
+    document.getElementById("D463R1").innerHTML =programnyelv;
+
+    function hozzaad() {
+        programnyelv.push("C nyelv");
+        document.getElementById("D463R1_1").innerHTML =programnyelv;
+    }
+
+    function hossz(){
+        document.getElementById("D463R1_2").innerHTML=programnyelv.length;
+    }
+   </script>
+</body>
+</html>

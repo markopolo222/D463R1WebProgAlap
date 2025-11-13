@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tömb törlése</title>
+</head>
+<body>
+    <h1>tömb törlése</h1>
+
+    <strong> Előtte: </strong> <p id="D463R1"> </p>
+    <strong> Utána: </strong> <p id="D463R1"> </p>
+
+    <button onclick="torol0()">Tömb 0. indexű elem törlése</button>
+    <button onclick="torol1()">Tömb 1. indexű elem törlése</button>
+    <button onclick="torol2()">Tömb 2. indexű elem törlése</button>
+
+    <script>
+        let programnyelv = ["HTML5", "CSS3", "JS"];
+        document.getElementById("D463R1").innerHTML = programnyelv;
+
+        function torol0() {
+            delete programnyelv[0];
+            document.getElementById("D463R1").innerHTML =programnyelv;
+        }
+
+        function torol1() {
+            delete programnyelv[1];
+            document.getElementById("D463R1").innerHTML =programnyelv;
+        }
+
+        function torol2() {
+            delete programnyelv[2];
+            document.getElementById("D463R1").innerHTML =programnyelv;
+        }
+    </script>
+</body>
+</html>
