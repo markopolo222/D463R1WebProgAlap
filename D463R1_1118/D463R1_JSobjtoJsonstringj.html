@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String fájl convertálás</title>
+</head>
+<body>
+    <h2>JavaScript obj konvertálás JSON string</h2>
+
+    <div class="jsonstring" style="font-family: monospace;">
+
+    </div>
+
+</body>
+<script>
+    const jsonOBJNM = {
+        Egyetem: "Tokaj Hegyaljai Egyetem",
+        Város: "Sárospatak",
+        Irányítószám: "3950",
+        Név: "Nagy Márk"
+    }
+
+    const jsonstring = JSON.stringify(jsonOBJNM, null, 4);
+    const jsonstringDiv = Document.querySelector('.jsonString');
+    jsonstringDiv.innerHTML = jsonstring;
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsonStringtoJSob</title>
+</head>
+<body>
+    <h3>JSON fájl beolvasás - JavaScript-ben</h3>
+
+    <strong>JSON:</strong>
+    <p id="D463R1"></p>
+
+    <button onclick="olvasas()">JSON beolvasás</button>
+
+    <script>
+        function olvasas(){
+            const JSONdata = '[{"nev":"HTML5", "kiterjesztés": ".html" }, {"nev":"CSS3", "kiterjesztés":".css"}, {"nev": "JavaScript", "kiterjesztés":".Js"}]';
+
+            const obj = JSON.parse(JSONdata);
+
+            let i = 0;
+            let szövegkiír="";
+
+            while(i < 3){
+                szövegkiír += "Név: "+obj[i].nev+", kiterjesztés: "+obj[i].kiterjesztés+ "<br>";
+                i++;
+            }
+            document.getElementById("D463R1").innerHTML=szövegkiír;
+        }
+    </script>
+</body>
+</html>
