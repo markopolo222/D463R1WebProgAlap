@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If feltétel</title>
+
+    <script>
+        let szamok = [-241, 41, 421, 0, -31, 7, -3, 7];
+        let pozitivszamok=[];
+
+        function elagazas() {
+            for (let i=0; i < szamok.length; i++)
+        {
+            if (szamok[i] > 0)
+        {
+            pozitivszamok.push(szamok[i]);
+        }
+        document.getElementById("pozitív").innerHTML = pozitivszamok;
+        }
+        }
+    </script>
+</head>
+<body>
+    <h2>If elagazás</h2>
+    Pozitív számok: <p id="pozitív"> </p>
+
+    <button onclick="elagazas()">Pozitív számok</button>
+</body>
+</html>

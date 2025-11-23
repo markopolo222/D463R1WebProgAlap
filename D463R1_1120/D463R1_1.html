@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery szolgáltatásai</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("btn").click(function(){
+                $("p").hide();
+            });
+            $("btn2").click(function(){
+                $("p").show();
+            })
+        });
+    </script>
+</head>
+<body>
+    <h2>jQuery feladatok</h2>
+
+    <p>A jQuery egy JavaScript programozói könyvtár, amely John Resig kezdett fejleszteni.</p>
+
+    <p><strong>Elterjedtnek tekinthető, segítségével könnyen bejárható egy HTML oldal DOM-ja.</strong></p>
+
+    <btn><strong>Kattints ide! - bekezdés elrejtéséhez</strong></btn> <br>
+    <btn2><strong>Kattints ide! - bekezdés megjelnítéséhez</strong></btn2>
+
+    <br> <br>
+
+    THE weboldal:
+    <a href="https://unithe.hu/">Tokaj Hegyaljai Egyetem</a>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órarend</title>
+    
+</head>
+<body>
+    <header><h1> Órarend D463R1</h1></header>
+    <div id="orarend">
+
+    </div>
+
+    <script>
+        let OrarendJSON = {
+            "D463R1_orend":{
+                "ora":[
+                    {
+                        "targy": "Programozás alapjai",
+                        "idopont": {
+                            "nap": "Hetfő",
+                            "tol": 8,
+                            "ig": 11
+                         },
+                         "Helyszín": " Online",
+                         "Oktató": "Gégény Dávid",
+                         "Szak": "Programtervező Informatikus"
+                    },
+                    {
+                        "targy": "Bevezetés a Tex-be",
+                        "idopont": {
+                            "nap": "Hetfő",
+                            "tol":14,
+                            "ig": 17
+                        },
+                        "Helyszin": "Online",
+                        "Oktató": "Dr.Veres Laura",
+                        "szak": "Programtervező Informatikus"
+                    },
+                    {
+                        "targy": "Webprogramozás alapjai",
+                        "idopont": {
+                            "nap": "kedd",
+                            "tol": 8,
+                            "ig": 9
+                        },
+                        "Helyszín": "Informatikaterem 124-es",
+                        "Oktató": "Dr. Bednarik László",
+                        "szak": "Programtervező Informatikus"
+                    },
+                    {
+                        "targy": "Diszkrét matematika és lineáris algebra",
+                        "idopont": {
+                            "nap": "kedd",
+                            "tol":10,
+                            "ig": 12
+                        },
+                        "Helyszín": "Tanterem 117-es",
+                        "Oktató": "Dr. Földvári Attila József",
+                        "szak": "Programtervező Informatikus"
+
+                    },
+                    {
+                        "targy": "Testnevelés I.",
+                        "idopont": {
+                            "nap":"kedd",
+                            "tol": 18,
+                            "ig": 19
+
+                        },
+                        "helyszín": "Szent Erzsébet Katolikus Általános Iskola Tornaterem (Szent_Erzsebet_Tornaterem),Tanterem 128-as",
+                        "oktato": "Bodnár Fruzsina",
+                        "szak": "Programtervező Informatikus"
+                    },
+                    {
+                     "targy": "Kutatás- és tanulásmódszertan",
+                    "idopont": {
+                        "nap":"Szerda",
+                        "tol": 13,
+                        "ig": 14
+
+                    },
+                    "helyszín": "Tanterem 111",
+                    "oktato": "Dr. Kökényesi Nikoletta Judit",
+                    "szak": "Programtervező Informatikus"
+                 },
+                 
+        {
+            "targy": "Idegen nyelv I.",
+            "idopont": {
+                "nap":"Szerda",
+                "tol": 15,
+                "ig": 18
+
+            },
+            "helyszín": "Tanterem 111",
+            "oktato": "Kováts Imre Győző",
+            "szak": "Programtervező Informatikus"
+        },
+
+        {
+            "targy": "Webprogramozás alapjai",
+            "idopont": {
+                "nap":"Csütörtök",
+                "tol": 8,
+                "ig": 9
+
+            },
+            "helyszín": "Informatikaterem 124-es",
+            "oktato": "Dr. Bednarik László",
+            "szak": "Programtervező Informatikus"
+        },
+        
+
+        {
+            "targy": "Számítógép architektúrák",
+            "idopont": {
+                "nap":"Csütörtök",
+                "tol": 10,
+                "ig": 11
+
+            },
+            "helyszín": "Informatikaterem 124-es",
+            "oktato": "Dr. Bednarik László",
+            "szak": "Programtervező Informatikus"
+        },
+
+        {
+            "targy": "Az informatika logikai alapjai",
+            "idopont": {
+                "nap":"Csütörtök",
+                "tol": 16,
+                "ig": 19
+
+            },
+            "helyszín": "Online",
+            "oktato": "Dr. Godó Zoltán Attila",
+            "szak": "Programtervező Informatikus"
+        },
+
+        {
+            "targy": "Testnevelés I.",
+            "idopont": {
+                "nap":"Csütörtök",
+                "tol": 18,
+                "ig": 19
+
+            },
+            "helyszín": "Szent Erzsébet Katolikus Általános Iskola Tornaterem (Szent_Erzsebet_Tornaterem)",
+            "oktato": "Bodnár Fruzsina",
+            "szak": "Programtervező Informatikus"
+        },
+
+        {
+            "targy": "Bevezetés az informatikába",
+            "idopont": {
+                "nap":"Péntek",
+                "tol": 13,
+                "ig": 17
+
+            },
+            "helyszín": "Online",
+            "oktato": "Janics Tamás",
+            "szak": "Programtervező Informatikus"
+        }
+
+
+                ]
+            }
+        };
+
+        let orarendlist = document.getElementById("orarend");
+        
+        // Napok fejlécének létrehozása (normalizált formában)
+        const napok = ["Hetfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"];
+        const napokNormalizalt = ["hetfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"];
+        
+        // Nap normalizálása (kisbetűssé alakítás összehasonlításhoz)
+        function normalizaltNap(nap) {
+            if (!nap) return "";
+            // Eltávolítjuk a szóközöket és kisbetűssé alakítjuk
+            return nap.trim().toLowerCase();
+        }
+        
+        // Összes egyedi időpont összegyűjtése
+        let idopontok = new Set();
+        for(let i = 0; i < OrarendJSON.D463R1_orend.ora.length; i++){
+            let ora = OrarendJSON.D463R1_orend.ora[i];
+            if(ora.targy && ora.idopont && ora.idopont.tol !== undefined && ora.idopont.ig !== undefined){
+                let idopontStr = ora.idopont.tol + ":00 - " + ora.idopont.ig + ":00";
+                idopontok.add(idopontStr);
+            }
+        }
+        
+        // Időpontok rendezése (először kezdőóra, majd végóra szerint)
+        let idopontokRendezett = Array.from(idopontok).sort((a, b) => {
+            let aResz = a.split(" - ");
+            let bResz = b.split(" - ");
+            let aKezdo = parseInt(aResz[0].split(":")[0]);
+            let bKezdo = parseInt(bResz[0].split(":")[0]);
+            if (aKezdo !== bKezdo) {
+                return aKezdo - bKezdo;
+            }
+            // Ha ugyanakkor kezdődnek, akkor a rövidebb kerüljön előrébb
+            let aVeg = parseInt(aResz[1].split(":")[0]);
+            let bVeg = parseInt(bResz[1].split(":")[0]);
+            return aVeg - bVeg;
+        });
+        
+        // Táblázat fejléc
+        let oralistaHTML = "<table border='1' style='border-collapse: collapse; width: 100%;'><thead><tr><th>Időpont</th>";
+        for(let nap of napok){
+            oralistaHTML += "<th>" + nap + "</th>";
+        }
+        oralistaHTML += "</tr></thead><tbody>";
+        
+        // Táblázat sorok létrehozása időpontok szerint
+        for(let idopontStr of idopontokRendezett){
+            oralistaHTML += "<tr>";
+            oralistaHTML += "<td><strong>" + idopontStr + "</strong></td>";
+            
+            // Minden naphoz cella
+            for(let j = 0; j < napok.length; j++){
+                let talaltOra = null;
+                
+                // Keresés az órák között
+                for(let i = 0; i < OrarendJSON.D463R1_orend.ora.length; i++){
+                    let ora = OrarendJSON.D463R1_orend.ora[i];
+                    if(ora.targy && ora.idopont && ora.idopont.tol !== undefined && ora.idopont.ig !== undefined){
+                        let oraIdopontStr = ora.idopont.tol + ":00 - " + ora.idopont.ig + ":00";
+                        let oraNap = normalizaltNap(ora.idopont.nap);
+                        
+                        if(oraIdopontStr === idopontStr && oraNap === napokNormalizalt[j]){
+                            talaltOra = ora;
+                            break;
+                        }
+                    }
+                }
+                
+                if(talaltOra){
+                    // Különböző kulcsnevek kezelése
+                    let helyszin = talaltOra.Helyszín || talaltOra.Helyszin || talaltOra.helyszín || talaltOra.helyszin || "";
+                    let oktato = talaltOra.Oktató || talaltOra.oktato || "";
+                    let szak = talaltOra.Szak || talaltOra.szak || "";
+                    
+                    oralistaHTML += "<td style='padding: 5px;'><strong>Tárgy: </strong>" + talaltOra.targy;
+                    if(helyszin) oralistaHTML += "<br><strong>Helyszín: </strong>" + helyszin;
+                    if(oktato) oralistaHTML += "<br><strong>Oktató: </strong>" + oktato;
+                    if(szak) oralistaHTML += "<br><strong>Szak: </strong>" + szak;
+                    oralistaHTML += "</td>";
+                } else {
+                    oralistaHTML += "<td></td>";
+                }
+            }
+            oralistaHTML += "</tr>";
+        }
+        oralistaHTML += "</tbody></table>";
+
+        orarendlist.innerHTML = oralistaHTML;
+
+    </script>
+</body>
+</html>
