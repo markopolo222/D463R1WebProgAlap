@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arraytoarrayfor</title>
+</head>
+<body>
+    <h1>Tömbökön belüli tömbök ciklusa</h1>
+
+    <div id="jsonD463R1">
+
+    </div>
+
+    <script>
+        const NMObj = {
+            "name":"Nagy Mark",
+            "age":23,
+            "cars": [
+                {"name": "Toyota", "models": ["CHR", "Corolla", "Proace"]},
+                {"name": "Ford", "models": ["Kuga", "Mondeo", "Mustang"]},
+                {"name": "BMW", "moldels": ["320", "X3", "XS"]},
+                {"name": "Fiat", "models": ["500", "panda", "Tipo"]}
+
+            ]
+        }
+
+        const jsonD463R1 = document.getElementById("jsonD463R1");
+        const h2 = document.createElement("h2");
+        h2.innerHTML = '<span><b>$(NMObj["name"])</b></span>' ($(NMObj["age"]));
+        jsonD463R1.appendChild(h2);
+
+        for(let i = 0; i < NMObj["cars"].length; i++){
+            
+        }
+    </script>
+</body>
+</html>
