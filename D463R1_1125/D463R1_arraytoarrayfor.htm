@@ -19,18 +19,30 @@
             "cars": [
                 {"name": "Toyota", "models": ["CHR", "Corolla", "Proace"]},
                 {"name": "Ford", "models": ["Kuga", "Mondeo", "Mustang"]},
-                {"name": "BMW", "moldels": ["320", "X3", "XS"]},
+                {"name": "BMW", "models": ["320", "X3", "XS"]},
                 {"name": "Fiat", "models": ["500", "panda", "Tipo"]}
 
             ]
-        }
+        };
 
         const jsonD463R1 = document.getElementById("jsonD463R1");
         const h2 = document.createElement("h2");
-        h2.innerHTML = '<span><b>$(NMObj["name"])</b></span>' ($(NMObj["age"]));
+        h2.innerHTML = `<span><b>${NMObj["name"]}</b></span> (${NMObj["age"]})`;
         jsonD463R1.appendChild(h2);
 
         for(let i = 0; i < NMObj["cars"].length; i++){
+            const h3 = document.createElement("h3");
+            h3.innerHTML = `<span><b>${NMObj["cars"][i]["name"]}</b></span>:`;
+            jsonD463R1.appendChild(h3);
+
+            const ul = document.createElement('ul');
+            jsonD463R1.appendChild(ul);
+
+            for(let j = 0; j < NMObj["cars"][i]["models"].length; j++){
+                const li = document.createElement('li');
+                li.innerHTML = NMObj["cars"][i]["models"][j];
+                ul.appendChild(li);
+            }
             
         }
     </script>
