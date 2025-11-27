@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Obj lekérése</h3>
+
+    <p id="D463R1"></p>
+
+    <button onclick="kiír()">Adatok lekérése</button>
+
+    <script>
+        const hallgato = {
+            nev: "NM",
+            eletkor: 23,
+            egyetem: "THE",
+            szak: "PTI",
+
+            osszesAdat: function(){
+                return "Név: "+hallgato.nev+ ", <br> Életkor: "+hallgato["eletkor"]+", <br> Egyetem: "+hallgato["egyetem"]+ ", <br> Szak: "+hallgato.szak;
+                }
+            };
+
+            function kiír(){
+                document.getElementById("D463R1").innerHTML =hallgato.osszesAdat();
+            }
+    </script>
+</body>
+</html>
